@@ -77,6 +77,7 @@ public class Flame extends Entity {
 	@Override
 	public boolean collide(Entity e) {
 		// TODO: xử lý va chạm với Bomber, Enemy. Chú ý đối tượng này có vị trí chính là vị trí của Bomb đã nổ
+
 		return true;
 	}
 }

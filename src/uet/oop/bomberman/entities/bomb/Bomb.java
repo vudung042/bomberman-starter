@@ -77,6 +77,7 @@ public class Bomb extends AnimatedEntitiy {
 		// TODO: xử lý khi Character đứng tại vị trí Bomb
 		
 		// TODO: tạo các Flame
+		
 	}
 	
 	public FlameSegment flameAt(int x, int y) {
