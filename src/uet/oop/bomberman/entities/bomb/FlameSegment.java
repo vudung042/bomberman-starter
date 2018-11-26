@@ -1,5 +1,6 @@
 package uet.oop.bomberman.entities.bomb;
 
+import uet.oop.bomberman.Board;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.entities.character.Character;
@@ -11,6 +12,7 @@ import uet.oop.bomberman.graphics.Sprite;
 public class FlameSegment extends Entity {
 
 	protected boolean _last;
+	protected Board _board;
 
 	/**
 	 *
@@ -20,10 +22,11 @@ public class FlameSegment extends Entity {
 	 * @param last cho biết segment này là cuối cùng của Flame hay không,
 	 *                segment cuối có sprite khác so với các segment còn lại
 	 */
-	public FlameSegment(int x, int y, int direction, boolean last) {
+	public FlameSegment(int x, int y, int direction, boolean last, Board board) {
 		_x = x;
 		_y = y;
 		_last = last;
+		_board = board;
 
 		switch (direction) {
 			case 0:
