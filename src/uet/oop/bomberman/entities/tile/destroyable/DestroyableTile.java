@@ -1,6 +1,8 @@
 package uet.oop.bomberman.entities.tile.destroyable;
 
 import uet.oop.bomberman.entities.Entity;
+import uet.oop.bomberman.entities.bomb.Bomb;
+import uet.oop.bomberman.entities.bomb.Flame;
 import uet.oop.bomberman.entities.bomb.FlameSegment;
 import uet.oop.bomberman.entities.tile.Tile;
 import uet.oop.bomberman.entities.tile.item.FlameItem;
@@ -39,10 +41,11 @@ public class DestroyableTile extends Tile {
 	@Override
 	public boolean collide(Entity e) {
 		// TODO: xử lý khi va chạm với Flame
-		if(e instanceof FlameSegment){
+		if(e instanceof Flame){
 			destroy();
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
 	public void addBelowSprite(Sprite sprite) {
