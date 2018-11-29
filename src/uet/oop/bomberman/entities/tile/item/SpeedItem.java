@@ -1,5 +1,6 @@
 package uet.oop.bomberman.entities.tile.item;
 
+import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.graphics.Sprite;
@@ -12,11 +13,12 @@ public class SpeedItem extends Item {
 
 	@Override
 	public boolean collide(Entity e) {
+	    //tăng tốc độ chạy bomber
 		// TODO: xử lý Bomber ăn Item
 		if (e instanceof Bomber) {
-			remove();
-			return true;
-		}
-		return false;
+            Game.addBomberSpeed(0.3);
+            remove();
+        }
+        return true;
 	}
 }

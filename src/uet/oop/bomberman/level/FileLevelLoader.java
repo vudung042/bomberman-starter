@@ -93,11 +93,11 @@ public class FileLevelLoader extends LevelLoader {
 				}
 				//thêm SpeedItem
 				else if(a=='s'){
-					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new SpeedItem(x, y, Sprite.powerup_flames), new Brick(x, y, Sprite.brick)));
+					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new SpeedItem(x, y, Sprite.powerup_wallpass), new Brick(x, y, Sprite.brick)));
 				}
 				//thêm BombItem
 				else if(a=='b'){
-					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new BombItem(x, y, Sprite.powerup_flames), new Brick(x, y, Sprite.brick)));
+					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new BombItem(x, y, Sprite.powerup_bombs), new Brick(x, y, Sprite.brick)));
 				}
 				//thêm FlameItem
 				else if(a=='f'){
@@ -105,7 +105,7 @@ public class FileLevelLoader extends LevelLoader {
 				}
 				//thêm Portal
 				else if(a=='x'){
-					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new Portal(x, y, Sprite.powerup_flames), new Brick(x, y, Sprite.brick)));
+					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new Portal(x, y, Sprite.portal), new Brick(x, y, Sprite.brick)));
 				}
 				else
 					_board.addEntity(pos, new Grass(x, y,  Sprite.grass));

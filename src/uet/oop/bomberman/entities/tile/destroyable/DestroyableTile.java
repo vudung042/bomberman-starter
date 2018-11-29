@@ -43,9 +43,8 @@ public class DestroyableTile extends Tile {
 		// TODO: xử lý khi va chạm với Flame
 		if(e instanceof Flame){
 			destroy();
-			return false;
 		}
-		return true;
+		return false;
 	}
 	
 	public void addBelowSprite(Sprite sprite) {
