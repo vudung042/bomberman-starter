@@ -105,7 +105,7 @@ public class FileLevelLoader extends LevelLoader {
 				}
 				//thêm Portal
 				else if(a=='x'){
-					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new Portal(x, y, Sprite.portal), new Brick(x, y, Sprite.brick)));
+					_board.addEntity(pos, new LayeredEntity(x, y, new Grass(x ,y, Sprite.grass), new Portal(x, y, Sprite.portal,_board), new Brick(x, y, Sprite.brick)));
 				}
 				else
 					_board.addEntity(pos, new Grass(x, y,  Sprite.grass));
