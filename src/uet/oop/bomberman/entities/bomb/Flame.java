@@ -45,23 +45,34 @@ public class Flame extends Entity {
 		/**
 		 * biến last dùng để đánh dấu cho segment cuối cùng
 		 */
-		boolean last = false;
+		boolean last;
 
 		// TODO: tạo các segment dưới đây
 
 
-		int x = (int)_x;
-		int y = (int)_y;
+		int x = (int) _x;
+		int y = (int) _y;
 		for (int i = 0; i < _flameSegments.length; i++) {
-			last = i == _flameSegments.length -1 ? true : false;
 
 			switch (_direction) {
-				case 0: y--; break;
-				case 1: x++; break;
-				case 2: y++; break;
-				case 3: x--; break;
+				case 0:
+					y--;
+					break;
+				case 1:
+					x++;
+					break;
+				case 2:
+					y++;
+					break;
+				case 3:
+					x--;
+					break;
 			}
-			_flameSegments[i] = new FlameSegment(x,y,_direction,last,_board);
+			if (i == _flameSegments.length - 1) {
+				_flameSegments[i] = new FlameSegment(x, y, _direction, true, _board);
+			} else {
+				_flameSegments[i] = new FlameSegment(x, y, _direction, false, _board);
+			}
 		}
 	}
 
@@ -82,12 +93,12 @@ public class Flame extends Entity {
 
 			Entity a = _board.getEntity(x, y, null);
 
-			if(a instanceof Character) ++radius; //explosion has to be below the mob
+			if(a instanceof Character) radius++;
 
-			if(a.collide(this) == false) //cannot pass thru
+			if(!a.collide(this))
 				break;
 
-			++radius;
+			radius++;
 		}
 		return radius;
 

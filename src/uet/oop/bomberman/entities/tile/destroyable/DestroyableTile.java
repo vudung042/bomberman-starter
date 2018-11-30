@@ -4,6 +4,8 @@ import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.bomb.Bomb;
 import uet.oop.bomberman.entities.bomb.Flame;
 import uet.oop.bomberman.entities.bomb.FlameSegment;
+import uet.oop.bomberman.entities.character.enemy.Doll;
+import uet.oop.bomberman.entities.character.enemy.Doria;
 import uet.oop.bomberman.entities.tile.Tile;
 import uet.oop.bomberman.entities.tile.item.FlameItem;
 import uet.oop.bomberman.graphics.Sprite;
@@ -43,6 +45,9 @@ public class DestroyableTile extends Tile {
 		// TODO: xử lý khi va chạm với Flame
 		if(e instanceof Flame){
 			destroy();
+		}
+		if(e instanceof Doria){
+			return true;
 		}
 		return false;
 	}
