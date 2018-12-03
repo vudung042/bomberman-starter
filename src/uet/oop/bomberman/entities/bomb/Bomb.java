@@ -2,6 +2,7 @@ package uet.oop.bomberman.entities.bomb;
 
 import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
+import uet.oop.bomberman.Sound;
 import uet.oop.bomberman.entities.AnimatedEntitiy;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
@@ -89,7 +90,8 @@ public class Bomb extends AnimatedEntitiy {
         if(a != null)  {
             a.kill();
         }
-
+		Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\22_SFX 5 - Explosion.wav");
+		sound.start();
         _flames = new Flame[4];
 
         for (int i = 0; i < _flames.length; i++) {

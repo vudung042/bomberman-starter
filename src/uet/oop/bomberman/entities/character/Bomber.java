@@ -2,6 +2,7 @@ package uet.oop.bomberman.entities.character;
 
 import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
+import uet.oop.bomberman.Sound;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.bomb.Bomb;
 import uet.oop.bomberman.entities.bomb.Flame;
@@ -91,6 +92,8 @@ public class Bomber extends Character {
 
     protected void placeBomb(int x, int y) {
         // TODO: thực hiện tạo đối tượng bom, đặt vào vị trí (x, y)
+        Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\19_SFX 2.wav");
+        sound.start();
         Bomb bomb = new Bomb(x,y,_board);
         _board.addBomb(bomb);
     }
@@ -113,6 +116,8 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
+        Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\19_SFX 2.wav");
+        sound.start();
     }
 
     @Override
@@ -120,6 +125,8 @@ public class Bomber extends Character {
         if (_timeAfter > 0) --_timeAfter;
         else {
             _board.endGame();
+            Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\15_Game Over.wav");
+            sound.start();
         }
     }
 
