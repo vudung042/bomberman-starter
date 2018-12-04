@@ -4,10 +4,7 @@ import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.LayeredEntity;
 import uet.oop.bomberman.entities.character.Bomber;
-import uet.oop.bomberman.entities.character.enemy.Balloon;
-import uet.oop.bomberman.entities.character.enemy.Doll;
-import uet.oop.bomberman.entities.character.enemy.Doria;
-import uet.oop.bomberman.entities.character.enemy.Oneal;
+import uet.oop.bomberman.entities.character.enemy.*;
 import uet.oop.bomberman.entities.tile.Grass;
 import uet.oop.bomberman.entities.tile.Portal;
 import uet.oop.bomberman.entities.tile.Wall;
@@ -97,6 +94,11 @@ public class FileLevelLoader extends LevelLoader {
 				//thêm Doria
 				else if(a=='4') {
 					_board.addCharacter(new Doria(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
+					_board.addEntity(pos, new Grass(x, y, Sprite.grass));
+				}
+				//thêm Minvo
+				else if(a=='5') {
+					_board.addCharacter(new Minvo(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
 					_board.addEntity(pos, new Grass(x, y, Sprite.grass));
 				}
 				//thêm Brick
