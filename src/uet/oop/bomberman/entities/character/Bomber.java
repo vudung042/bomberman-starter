@@ -2,7 +2,7 @@ package uet.oop.bomberman.entities.character;
 
 import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
-import uet.oop.bomberman.Sound;
+import uet.oop.bomberman.sounds.*;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.bomb.Bomb;
 import uet.oop.bomberman.entities.bomb.Flame;
@@ -13,6 +13,7 @@ import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.input.Keyboard;
 import uet.oop.bomberman.level.Coordinates;
 
+import java.io.File;
 import java.util.Iterator;
 import java.util.List;
 
@@ -92,10 +93,12 @@ public class Bomber extends Character {
 
     protected void placeBomb(int x, int y) {
         // TODO: thực hiện tạo đối tượng bom, đặt vào vị trí (x, y)
-        Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\19_SFX 2.wav");
-        sound.start();
         Bomb bomb = new Bomb(x,y,_board);
         _board.addBomb(bomb);
+        Sound sound = new Sound(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\placeBomb.wav"));
+        sound.play();
+        sound.stop();
+
     }
 
     private void clearBombs() {
@@ -116,17 +119,16 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
-        Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\19_SFX 2.wav");
-        sound.start();
+
     }
 
     @Override
     protected void afterKill() {
         if (_timeAfter > 0) --_timeAfter;
         else {
+            Sound sound = new Sound(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\15_Game Over.wav"));
+            sound.play();
             _board.endGame();
-            Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\15_Game Over.wav");
-            sound.start();
         }
     }
 

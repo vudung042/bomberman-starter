@@ -33,8 +33,7 @@ public class Frame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		setLocationRelativeTo(null);
-		setVisible(true);	
-		
+		setVisible(true);
 		_game.start();
 	}
 	

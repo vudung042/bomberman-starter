@@ -2,7 +2,7 @@ package uet.oop.bomberman.entities.bomb;
 
 import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
-import uet.oop.bomberman.Sound;
+import uet.oop.bomberman.sounds.*;
 import uet.oop.bomberman.entities.AnimatedEntitiy;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
@@ -10,6 +10,8 @@ import uet.oop.bomberman.entities.character.Character;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.level.Coordinates;
+
+import java.io.File;
 
 public class Bomb extends AnimatedEntitiy {
 
@@ -90,25 +92,26 @@ public class Bomb extends AnimatedEntitiy {
         if(a != null)  {
             a.kill();
         }
-		Sound sound = new Sound("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\22_SFX 5 - Explosion.wav");
-		sound.start();
         _flames = new Flame[4];
 
         for (int i = 0; i < _flames.length; i++) {
             _flames[i] = new Flame((int)_x, (int)_y, i, Game.getBombRadius(), _board);
         }
+		Sound sound = new Sound(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\Explosion.wav"));
+		sound.play();
+		sound.stop();
 	}
 	
 	public FlameSegment flameAt(int x, int y) {
 		if(!_exploded) return null;
-		
 		for (int i = 0; i < _flames.length; i++) {
 			if(_flames[i] == null) return null;
 			FlameSegment e = _flames[i].flameSegmentAt(x, y);
 			if(e != null) return e;
 		}
-		
 		return null;
+
+
 	}
 
 	@Override
