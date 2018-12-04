@@ -19,12 +19,13 @@ public class FlameItem extends Item {
 		//tăng độ dài flame
 		// TODO: xử lý Bomber ăn Item
 		if (e instanceof Bomber) {
-			Sound sound = new Sound(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
-			sound.play();
-			sound.stop();
+
 			Game.addBombRadius(1);
 			remove();
+			Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
+			sound.play();
+			sound.stop();
 		}
-		return true;
+		return false;
 	}
 }

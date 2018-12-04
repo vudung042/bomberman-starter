@@ -12,8 +12,10 @@ import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.input.Keyboard;
 import uet.oop.bomberman.level.FileLevelLoader;
 import uet.oop.bomberman.level.LevelLoader;
+import uet.oop.bomberman.sounds.Sound;
 
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -111,6 +113,7 @@ public class Board implements IRender {
 	}
 	
 	public void endGame() {
+
 		_screenToShow = 1;
 		_game.resetScreenDelay();
 		_game.pause();

@@ -97,7 +97,7 @@ public class Bomb extends AnimatedEntitiy {
         for (int i = 0; i < _flames.length; i++) {
             _flames[i] = new Flame((int)_x, (int)_y, i, Game.getBombRadius(), _board);
         }
-		Sound sound = new Sound(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\Explosion.wav"));
+		Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Explosion.wav"));
 		sound.play();
 		sound.stop();
 	}
@@ -130,7 +130,7 @@ public class Bomb extends AnimatedEntitiy {
 		}
 
 		if(e instanceof Flame) {
-			_timeToExplode = 0;
+			_timeToExplode = 30;
 			return true;
 		}
 

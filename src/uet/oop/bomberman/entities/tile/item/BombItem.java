@@ -19,12 +19,12 @@ public class BombItem extends Item {
 		//tăng số lượng bomb
 		// TODO: xử lý Bomber ăn Item
 		if (e instanceof Bomber) {
-			Sound sound = new Sound(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
-			sound.play();
-			sound.stop();
 			Game.addBombRate(1);
 			remove();
+			Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
+			sound.play();
+			sound.stop();
 		}
-		return true;
+		return false;
 	}
 }

@@ -24,7 +24,7 @@ public class Portal extends Tile {
 
             if(e.getXTile() == getX() && e.getYTile() == getY()) {
                 if(_board.detectNoEnemies()) {
-                    Sound sound = new Sound(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter\\res\\Sound\\placeBomb.wav"));
+                    Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\placeBomb.wav"));
                     sound.play();
                     sound.stop();
 
