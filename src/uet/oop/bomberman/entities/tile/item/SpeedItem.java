@@ -20,11 +20,9 @@ public class SpeedItem extends Item {
 		// TODO: xử lý Bomber ăn Item
 		if (e instanceof Bomber) {
 
-            Game.addBomberSpeed(0.3);
+            Game.addBomberSpeed(0.4);
             remove();
-			Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
-			sound.play();
-			sound.stop();
+			Sounds.anitem().play();
         }
         return false;
 	}

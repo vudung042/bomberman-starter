@@ -13,6 +13,7 @@ import uet.oop.bomberman.input.Keyboard;
 import uet.oop.bomberman.level.FileLevelLoader;
 import uet.oop.bomberman.level.LevelLoader;
 import uet.oop.bomberman.sounds.Sound;
+import uet.oop.bomberman.sounds.Sounds;
 
 import java.awt.*;
 import java.io.File;
@@ -92,8 +93,7 @@ public class Board implements IRender {
 		if(level>5)
 		{
 			endGame();
-			Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Win.wav"));
-			sound.play();
+			Sounds.win().play();
 			_screenToShow=4;
 		}else {
 			_time = Game.TIME;
@@ -121,10 +121,10 @@ public class Board implements IRender {
 	}
 	
 	public void endGame() {
-
 		_screenToShow = 1;
 		_game.resetScreenDelay();
 		_game.pause();
+
 	}
 	
 	public boolean detectNoEnemies() {

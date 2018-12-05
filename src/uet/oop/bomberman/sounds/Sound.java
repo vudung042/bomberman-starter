@@ -6,11 +6,11 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
 
-public class Sound {
+public class  Sound {
 
-    private Clip clip;
+    public static Clip clip;
 
-    public Sound (File path) {
+    public static void clip(File path) {
         try {
             AudioInputStream ais;
             ais = AudioSystem.getAudioInputStream(path);
@@ -27,32 +27,18 @@ public class Sound {
             AudioInputStream dais = AudioSystem.getAudioInputStream(decodeFormat, ais);
             clip = AudioSystem.getClip();
             clip.open(dais);
+            clip.loop(5);
         } catch (Exception e) {
         }
-    }
-
-    public void play() {
-        if (clip != null) {
-            stop();
-            clip.setFramePosition(0);
-            clip.start();
-        }
-    }
-    public void resume() {
-
-            clip.setFramePosition(0);
-
-            clip.loop(5);
 
     }
 
-    public void stop() {
+    public static void stop() {
         if (clip.isRunning()) clip.stop();
     }
 
-    public void close() {
-        clip.close();
+    public static void audio(){
+       clip(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Audio.wav"));
+
     }
-
-
 }

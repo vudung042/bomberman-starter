@@ -21,9 +21,7 @@ public class BombItem extends Item {
 		if (e instanceof Bomber) {
 			Game.addBombRate(1);
 			remove();
-			Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
-			sound.play();
-			sound.stop();
+			Sounds.anitem().play();
 		}
 		return false;
 	}

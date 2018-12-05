@@ -97,9 +97,7 @@ public class Bomb extends AnimatedEntitiy {
         for (int i = 0; i < _flames.length; i++) {
             _flames[i] = new Flame((int)_x, (int)_y, i, Game.getBombRadius(), _board);
         }
-		Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Explosion.wav"));
-		sound.play();
-		sound.stop();
+		Sounds.bomno().play();
 	}
 	
 	public FlameSegment flameAt(int x, int y) {

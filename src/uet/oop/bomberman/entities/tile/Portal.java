@@ -5,6 +5,8 @@ import uet.oop.bomberman.sounds.Sound;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.graphics.Sprite;
+import uet.oop.bomberman.sounds.Sounds;
+
 import java.io.File;
 public class Portal extends Tile {
     Board _board;
@@ -24,10 +26,8 @@ public class Portal extends Tile {
 
             if(e.getXTile() == getX() && e.getYTile() == getY()) {
                 if(_board.detectNoEnemies()) {
-                    Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Portal.wav"));
-                    sound.play();
-                    sound.stop();
-
+                    Sound.stop();
+                    Sounds.quacua().play();
                     _board.nextLevel();
                 }
             }

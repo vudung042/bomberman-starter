@@ -95,9 +95,7 @@ public class Bomber extends Character {
         // TODO: thực hiện tạo đối tượng bom, đặt vào vị trí (x, y)
         Bomb bomb = new Bomb(x,y,_board);
         _board.addBomb(bomb);
-        Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\placeBomb.wav"));
-        sound.play();
-        sound.stop();
+        Sounds.datbom().play();
 
     }
 
@@ -119,8 +117,7 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
-//        Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Die.wav"));
-//        sound.play();
+        Sounds.bomberchet().play();
     }
 
     @Override
@@ -128,8 +125,8 @@ public class Bomber extends Character {
         if (_timeAfter > 0) --_timeAfter;
         else {
             _board.endGame();
-            Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\GameOver.wav"));
-            sound.play();
+            Sound.stop();
+            Sounds.gameover().play();
 
         }
     }
