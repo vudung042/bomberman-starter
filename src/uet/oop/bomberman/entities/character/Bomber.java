@@ -119,17 +119,18 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
-
+//        Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Die.wav"));
+//        sound.play();
     }
 
     @Override
     protected void afterKill() {
         if (_timeAfter > 0) --_timeAfter;
         else {
-
-            Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\15_Game Over.wav"));
-            sound.play();
             _board.endGame();
+            Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\GameOver.wav"));
+            sound.play();
+
         }
     }
 

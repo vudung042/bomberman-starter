@@ -12,8 +12,7 @@ import java.io.File;
 public class BombermanGame {
 
 	public static void main(String[] args) {
-		File file = new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Sound.wav");
-		Sound sound = new Sound(file);
+		Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Audio.wav"));
 		sound.resume();
 		new Frame();
 

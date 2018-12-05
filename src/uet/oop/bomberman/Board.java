@@ -89,21 +89,29 @@ public class Board implements IRender {
 	}
 	
 	public void loadLevel(int level) {
-		_time = Game.TIME;
-		_screenToShow = 2;
-		_game.resetScreenDelay();
-		_game.pause();
-		_characters.clear();
-		_bombs.clear();
-		_messages.clear();
-		
-		try {
-			_levelLoader = new FileLevelLoader(this, level);
-			_entities = new Entity[_levelLoader.getHeight() * _levelLoader.getWidth()];
-			
-			_levelLoader.createEntities();
-		} catch (LoadLevelException e) {
+		if(level>5)
+		{
 			endGame();
+			Sound sound = new Sound(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Win.wav"));
+			sound.play();
+			_screenToShow=4;
+		}else {
+			_time = Game.TIME;
+			_screenToShow = 2;
+			_game.resetScreenDelay();
+			_game.pause();
+			_characters.clear();
+			_bombs.clear();
+			_messages.clear();
+
+			try {
+				_levelLoader = new FileLevelLoader(this, level);
+				_entities = new Entity[_levelLoader.getHeight() * _levelLoader.getWidth()];
+
+				_levelLoader.createEntities();
+			} catch (LoadLevelException e) {
+				endGame();
+			}
 		}
 	}
 	
