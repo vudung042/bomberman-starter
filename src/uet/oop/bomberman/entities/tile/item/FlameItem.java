@@ -22,7 +22,7 @@ public class FlameItem extends Item {
 
 			Game.addBombRadius(1);
 			remove();
-			Sounds.anitem().play();
+			Sound.anitem();
 		}
 		return false;
 	}

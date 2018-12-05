@@ -21,7 +21,7 @@ public class BombItem extends Item {
 		if (e instanceof Bomber) {
 			Game.addBombRate(1);
 			remove();
-			Sounds.anitem().play();
+			Sound.anitem();
 		}
 		return false;
 	}

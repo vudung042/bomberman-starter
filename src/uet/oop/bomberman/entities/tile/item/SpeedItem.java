@@ -22,7 +22,7 @@ public class SpeedItem extends Item {
 
             Game.addBomberSpeed(0.4);
             remove();
-			Sounds.anitem().play();
+			Sound.anitem();
         }
         return false;
 	}

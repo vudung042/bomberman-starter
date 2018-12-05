@@ -95,7 +95,7 @@ public class Bomber extends Character {
         // TODO: thực hiện tạo đối tượng bom, đặt vào vị trí (x, y)
         Bomb bomb = new Bomb(x,y,_board);
         _board.addBomb(bomb);
-        Sounds.datbom().play();
+        Sound.datbom();
 
     }
 
@@ -117,7 +117,7 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
-        Sounds.bomberchet().play();
+        Sound.bomberchet();
     }
 
     @Override
@@ -125,8 +125,8 @@ public class Bomber extends Character {
         if (_timeAfter > 0) --_timeAfter;
         else {
             _board.endGame();
-            Sound.stop();
-            Sounds.gameover().play();
+            Sounds.stop();
+            Sound.gameover();
 
         }
     }

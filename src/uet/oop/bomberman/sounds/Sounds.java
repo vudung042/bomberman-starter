@@ -1,45 +1,44 @@
 package uet.oop.bomberman.sounds;
 
-import java.applet.Applet;
-import java.applet.AudioClip;
-import java.net.URL;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.File;
 
+public class  Sounds {
 
-public class Sounds
-{
-    public static AudioClip play(String path)
-    {
-        AudioClip clip=null;
-        URL url = Sounds.class.getResource(path);
-        clip = Applet.newAudioClip(url);
+    public static Clip clip;
 
-        return clip;
-    }
+    public static void clip(File path) {
+        try {
+            AudioInputStream ais;
+            ais = AudioSystem.getAudioInputStream(path);
+            AudioFormat baseFormat = ais.getFormat();
+            AudioFormat decodeFormat = new AudioFormat(
+                    AudioFormat.Encoding.PCM_SIGNED,
+                    baseFormat.getSampleRate(),
+                    16,
+                    baseFormat.getChannels(),
+                    baseFormat.getChannels() * 2,
+                    baseFormat.getSampleRate(),
+                    false
+            );
+            AudioInputStream dais = AudioSystem.getAudioInputStream(decodeFormat, ais);
+            clip = AudioSystem.getClip();
+            clip.open(dais);
+            clip.loop(8);
+        } catch (Exception e) {
+        }
 
-    public static AudioClip bomno(){
-        return play("/Sound/Explosion.wav");
-    }
-    public static AudioClip bomberchet(){
-        return play("/Sound/Die.wav");
-    }
-    public static AudioClip enemychet(){
-        return play("/Sound/Enemy.wav");
-    }
-    public static AudioClip gameover(){
-        return play("/Sound/GameOver.wav");
-    }
-    public static AudioClip anitem(){
-        return play("/Sound/Items.wav");
-    }
-    public static AudioClip win(){
-    return play("/Sound/Win.wav");
-    }
-    public static AudioClip datbom(){
-        return play("/Sound/placeBomb.wav");
-    }
-    public static AudioClip quacua(){
-        return play("/Sound/Portal.wav");
     }
 
+    public static void stop() {
+        if (clip.isRunning()) clip.stop();
+    }
+
+    public static void audio() {
+        clip(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Audio.wav"));
+    }
 }
 

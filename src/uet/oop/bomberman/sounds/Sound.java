@@ -10,7 +10,8 @@ public class  Sound {
 
     public static Clip clip;
 
-    public static void clip(File path) {
+
+    public static void clips(File path) {
         try {
             AudioInputStream ais;
             ais = AudioSystem.getAudioInputStream(path);
@@ -27,18 +28,34 @@ public class  Sound {
             AudioInputStream dais = AudioSystem.getAudioInputStream(decodeFormat, ais);
             clip = AudioSystem.getClip();
             clip.open(dais);
-            clip.loop(5);
+            clip.start();
         } catch (Exception e) {
         }
 
     }
 
-    public static void stop() {
-        if (clip.isRunning()) clip.stop();
+    public static void bomno(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Explosion.wav"));
     }
-
-    public static void audio(){
-       clip(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Audio.wav"));
-
+    public static void bomberchet(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Die.wav"));
+    }
+    public static void enemychet(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Enemy.wav"));
+    }
+    public static void gameover(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\GameOver.wav"));
+    }
+    public static void anitem(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
+    }
+    public static void win(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Win.wav"));
+    }
+    public static void datbom(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\placeBomb.wav"));
+    }
+    public static void quacua(){
+        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Portal.wav"));
     }
 }
