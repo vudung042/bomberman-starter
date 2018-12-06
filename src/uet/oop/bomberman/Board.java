@@ -13,6 +13,7 @@ import uet.oop.bomberman.input.Keyboard;
 import uet.oop.bomberman.level.FileLevelLoader;
 import uet.oop.bomberman.level.LevelLoader;
 import uet.oop.bomberman.sounds.Sound;
+import uet.oop.bomberman.sounds.Sounds;
 
 
 import java.awt.*;
@@ -90,11 +91,12 @@ public class Board implements IRender {
 	}
 	
 	public void loadLevel(int level) {
-		if(level>5)
+		if(level>6)
 		{
 			endGame();
+			Sounds.stop();
 			Sound.win();
-			_screenToShow=4;
+			_screenToShow = 4;
 		}else {
 			_time = Game.TIME;
 			_screenToShow = 2;
@@ -146,6 +148,9 @@ public class Board implements IRender {
 				break;
 			case 3:
 				_screen.drawPaused(g);
+				break;
+			case 4:
+				_screen.drawWin(g,_points);
 				break;
 		}
 	}

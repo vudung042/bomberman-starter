@@ -35,25 +35,25 @@ public class  Sound {
     }
 
     public static void bomno(){
-        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Explosion.wav"));
+        clips(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\Explosion.wav"));
     }
     public static void bomberchet(){
-        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Die.wav"));
+        clips(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\Die.wav"));
     }
     public static void enemychet(){
-        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Enemy.wav"));
+        clips(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\Enemy.wav"));
     }
     public static void gameover(){
-        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\GameOver.wav"));
+        clips(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\GameOver.wav"));
     }
     public static void anitem(){
-        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Items.wav"));
+        clips(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\Items.wav"));
     }
     public static void win(){
-        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Win.wav"));
+        clips(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\Win.wav"));
     }
     public static void datbom(){
-        clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\placeBomb.wav"));
+        clips(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\placeBomb.wav"));
     }
     public static void quacua(){
         clips(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Portal.wav"));

@@ -90,8 +90,8 @@ public class Flame extends Entity {
 			if(_direction == 1) x++;
 			if(_direction == 2) y++;
 			if(_direction == 3) x--;
-
 			Entity a = _board.getEntity(x, y, null);
+
 
 			if(a instanceof Character) radius++;
 

@@ -27,7 +27,7 @@ public class  Sounds {
             AudioInputStream dais = AudioSystem.getAudioInputStream(decodeFormat, ais);
             clip = AudioSystem.getClip();
             clip.open(dais);
-            clip.loop(8);
+            clip.loop(10);
         } catch (Exception e) {
         }
 
@@ -38,7 +38,7 @@ public class  Sounds {
     }
 
     public static void audio() {
-        clip(new File("C:\\Users\\dell\\IdeaProjects\\bomberman-starter\\res\\Sound\\Audio.wav"));
+        clip(new File("C:\\Users\\ADMIN\\IdeaProjects\\bomberman-starter1\\res\\Sound\\Audio.wav"));
     }
 }
 

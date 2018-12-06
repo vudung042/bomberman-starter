@@ -115,37 +115,20 @@ public abstract class Enemy extends Character {
 	@Override
 	public boolean canMove(double x, double y) {
 
-		double[] xa = new double[4];
-		double[] ya = new double[4];
-		xa[0] = (_x + x) / Game.TILES_SIZE;
-		ya[0] = ((_y + y-1)) / Game.TILES_SIZE;
-		xa[1] = (_x + x+ 15) / Game.TILES_SIZE;
-		ya[1] = ((_y + y-1)) / Game.TILES_SIZE;
-		xa[2] = ((_x + x)) / Game.TILES_SIZE;
-		ya[2] = (_y + y-15) / Game.TILES_SIZE;
-		xa[3] = (_x + x+15) / Game.TILES_SIZE;
-		ya[3] = (_y + y-15) / Game.TILES_SIZE;
-		for(int i=0;i<4;i++) {
-			Entity entity = _board.getEntity(xa[i], ya[i], this);
-			if (!entity.collide(this))
-				return false;
-		}
-		return true;
-//		double xr = _x, yr = _y - 16; //subtract y to get more accurate results
-//
-//		//the thing is, subract 15 to 16 (sprite size), so if we add 1 tile we get the next pixel tile with this
-//		//we avoid the shaking inside tiles with the help of steps
-//		if(_direction == 0) { yr += _sprite.getSize() -1 ; xr += _sprite.getSize()/2; }
-//		if(_direction == 1) {yr += _sprite.getSize()/2; xr += 1;}
-//		if(_direction == 2) { xr += _sprite.getSize()/2; yr += 1;}
-//		if(_direction == 3) { xr += _sprite.getSize() -1; yr += _sprite.getSize()/2;}
-//
-//		int xx = Coordinates.pixelToTile(xr) +(int)x;
-//		int yy = Coordinates.pixelToTile(yr) +(int)y;
-//
-//		Entity a = _board.getEntity(xx, yy, this); //entity of the position we want to go
-//
-//		return a.collide(this);
+
+		double xr = _x, yr = _y - 16;
+
+		if(_direction == 0) { yr += _sprite.getSize() -1 ; xr += _sprite.getSize()/2; }
+		if(_direction == 1) {yr += _sprite.getSize()/2; xr += 1;}
+		if(_direction == 2) { xr += _sprite.getSize()/2; yr += 1;}
+		if(_direction == 3) { xr += _sprite.getSize() -1; yr += _sprite.getSize()/2;}
+
+		int xx = Coordinates.pixelToTile(xr) +(int)x;
+		int yy = Coordinates.pixelToTile(yr) +(int)y;
+
+		Entity a = _board.getEntity(xx, yy, this); //entity of the position we want to go
+
+		return a.collide(this);
 	}
 
 	@Override
